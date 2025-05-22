@@ -1,0 +1,2 @@
+# web3_practice_contract
+東大ブロックチェーン講座練習用コントラクト
