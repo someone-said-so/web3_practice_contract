@@ -20,3 +20,12 @@ $ forge script script/Deployment.s.sol --rpc-url http://127.0.0.1:8545 --broadca
 $ forge script script/Counter.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
 ```
 
+ソースをビルドする
+```
+$ forge build
+```
+
+テストする
+```
+$ forge test -vv
+```

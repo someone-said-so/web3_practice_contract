@@ -8,8 +8,9 @@ contract CounterScript is Script {
     function setUp() public {}
 
     function run() public {
-        // 既にデプロイ済みのCounterコントラクトのアドレスを指定
-        address counterAddress = 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512;
+        // 環境変数からコントラクトアドレスを文字列として取得し、アドレス型に変換
+        string memory contractAddress = vm.envString("CONTRACT_ADDRESS");
+        address counterAddress = vm.parseAddress(contractAddress);
 
         // コントラクトインスタンスを取得
         Counter counter = Counter(counterAddress);
@@ -23,6 +24,5 @@ contract CounterScript is Script {
         // 現在の number の値を取得
         uint256 currentNumber = counter.number();
         console.log("Current number:", currentNumber);
-
     }
 }
